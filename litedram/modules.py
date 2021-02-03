@@ -650,6 +650,25 @@ class MT41J128M16(DDR3Module):
 
 class MT41K128M16(MT41J128M16): pass
 
+# NICK DEBUG  NT5CC128M16IP-DII
+class NT5CC128M16(DDR3Module):
+    memtype = "DDR3"
+    # geometry
+    nbanks = 8
+    nrows  = 16384
+    ncols  = 1024
+    # timings
+    technology_timings = _TechnologyTimings(tREFI=64e6/8192, tWTR=(4, 7.5), tCCD=(4, None), tRRD=(4, 10), tZQCS=(64, 80))
+    speedgrade_timings = {
+        "800" : _SpeedgradeTimings(tRP=15,     tRCD=15,     tWR=15, tRFC=(None, 260), tFAW=(None, 40), tRAS=37.5),
+        "1066": _SpeedgradeTimings(tRP=15,     tRCD=15,     tWR=15, tRFC=(None, 260), tFAW=(None, 40), tRAS=37.5),
+        "1333": _SpeedgradeTimings(tRP=13.125, tRCD=13.125, tWR=15, tRFC=(None, 260), tFAW=(None, 30), tRAS=36),
+        "1600": _SpeedgradeTimings(tRP=13.125, tRCD=13.125, tWR=15, tRFC=(None, 260), tFAW=(None, 30), tRAS=35),
+        "1866": _SpeedgradeTimings(tRP=13.125, tRCD=13.125, tWR=15, tRFC=(None, 260), tFAW=(None, 27), tRAS=34),
+    }
+    speedgrade_timings["default"] = speedgrade_timings["1600"]
+# NICK DEBUG
+
 class MT41J256M16(DDR3Module):
     # geometry
     nbanks = 8
