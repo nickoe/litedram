@@ -666,7 +666,9 @@ class NT5CC128M16(DDR3Module):
         "1600": _SpeedgradeTimings(tRP=13.125, tRCD=13.125, tWR=15, tRFC=(None, 260), tFAW=(None, 30), tRAS=35),
         "1866": _SpeedgradeTimings(tRP=13.125, tRCD=13.125, tWR=15, tRFC=(None, 260), tFAW=(None, 27), tRAS=34),
     }
-    speedgrade_timings["default"] = speedgrade_timings["1600"]
+    speedgrade_timings["default"] = speedgrade_timings["800"]
+    #            <Parameters twtr="7.5" trrd="7.5" trefi="7.8" tfaw="40" trtp="7.5" tcke="5.625" trfc="160" trp="13.75" tras="35" trcd="13.75" />
+
 # NICK DEBUG
 
 class MT41J256M16(DDR3Module):
